@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photobooth Presencia</title>
+    <style>
+        .mainFrame {
+            display: flex;
+            gap: 5px;
+            /* margin-left: auto; */
+            /* justify-content: center; */
+        }
+        .photoTaken {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 20px;
+
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://www.lactame.com/lib/image-js/0.21.2/image.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="font-[inter] bg-[#2D336B]">
+    <div class="flex justify-center gap-5 mt-5">
+        <div class="p-20">
+            <h1 class="font-bold text-3xl text-center mb-5 text-white">Mini Photobooth Presencia</h1>
+            <p class="text-white mb-5 font-medium" id="timer"></p>
+            <video autoplay class="w-full" id="vid"></video>
+            <canvas id="canvas" style="display: none;">
+            </canvas>
+            <button class="p-3 cursor-pointer hover:bg-blue-700 transition-all rounded-md text-white text-xl font-medium bg-blue-600 mt-5 w-full" id="captureButton">
+                Take a Photo 📸
+            </button>
+
+            <div class="gap-5 mt-5 hidden" id="adjust">
+                <div class="flex h-[100px] gap-3 flex-wrap" id="decorations">
+                    <div>
+                        <img class="mb-2" src="floral.png" draggable="true" class="decoration" width="100">
+                        <img src="sakura.png" draggable="true" class="decoration" width="100">
+                        <img class="mb-2" src="anime1png.png" draggable="true" class="decoration" width="100">
+                    </div>
+                    <div>
+                        <img class="mb-2" src="flowerPINK.png" draggable="true" class="decoration" width="100">
+                        <img src="blueflower.png" draggable="true" class="decoration" width="100">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-5">
+                    <h1 class="text-white font-bold">Drag And Drop to Canvas -></h1>
+                    <button class="p-3 cursor-pointer hover:bg-blue-700 transition-all rounded-md text-white text-xl font-medium bg-blue-600  w-full" id="savephoto">
+                        Save photo!
+                    </button>
+                    <div class="hidden" id="stepbystep">
+                        <h1 class="text-white">Scan here for download</h1>
+                        <p class="text-white">1. Connect to wifi named "Presencia" with password "presencia"</p>
+                        <p class="text-white">2. Scan the qrcode</p>
+                        <p class="text-white">3. Copy link and open in your browser</p>
+                        <p class="text-white">4. And the file will automatically downloaded!</p>
+                    </div>
+                    <div class="self-center flex flex-col gap-10" id="qrcode"></div>
+                </div>
+                <canvas class="self-end" id="allPhotos" width="3124" height="3124">
+                </canvas>    
+            </div>
+            
+        </div>
+        <div class="p-5" id="listPhoto">
+                <img class="mb-5" width="250" height="200" alt="">
+                <img class="mb-5" width="250" height="200" alt="">
+                <img class="mb-5" width="250" height="200" alt="">
+        </div>
+
+        
+        
+        <!-- <img id="storeAllPhoto" src="" alt=""> -->
+
+    </div>
+    <script src="qrcode.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
