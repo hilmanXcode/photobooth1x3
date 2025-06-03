@@ -1,4 +1,4 @@
-# 📸 Mini Photobooth 1x3 – versi Presencia
+# 📸 Mini Photobooth 1x3
 
 Hai! Ini project **Photobooth digital sederhana** buat seru-seruan bareng temen-temen atau acara komunitas kamu. Cuma modal kamera, bisa ambil 3 foto lucu, kasih dekorasi stiker ala-ala, terus hasilnya bisa di-download pakai QR Code langsung 😎
 
@@ -13,6 +13,20 @@ Hai! Ini project **Photobooth digital sederhana** buat seru-seruan bareng temen-
 - 📥 Hasil bisa di-save, terus muncul QR Code buat download
 
 ---
+
+## Note
+Jangan lupa ganti ip di bagian ini menjadi ip server lokal kamu jika
+ingin orang lain bisa download, atau bisa juga ubah jadi localhost kalau buat coba coba saja
+```bash
+new QRCode(document.getElementById("qrcode"), {
+	text: `http://192.168.8.119:3000/download/${nameFile}.jpeg`, // ubah ip 192.168.8.119 nya ya
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+});
+```
 
 ## ⚙️ Cara Pakainya
 
