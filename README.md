@@ -65,7 +65,6 @@ photobooth1x3/
 ├── script.js           # Semua logic kamera & foto
 ├── qrcode.js           # Bikin QR Code biar bisa download foto
 ├── visitorimage/       # Folder tempat nyimpen hasil foto
-├── decorations/        # Stiker-stiker lucu buat dekorasi
 ```
 
 ---
